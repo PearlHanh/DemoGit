@@ -1,10 +1,10 @@
-package com.example.demogamebai2.controller.gameplaycontroller.samloc;
+package com.example.playcardsfx.controller.gameplaycontroller.samloc;
 
-import com.example.demogamebai2.utilities.MediaManager;
-import com.example.demogamebai2.model.Card;
-import com.example.demogamebai2.model.Deck;
-import com.example.demogamebai2.model.Player;
-import com.example.demogamebai2.utilities.SceneManager;
+import com.example.playcardsfx.utilities.MediaManager;
+import com.example.playcardsfx.model.Card;
+import com.example.playcardsfx.model.Deck;
+import com.example.playcardsfx.model.Player;
+import com.example.playcardsfx.utilities.SceneManager;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -344,14 +344,14 @@ public class SamLocController implements Initializable {
      public void resetButtonClicked(ActionEvent event){
         SceneManager.getInstance().setPrimaryStage((Stage)resetButton.getScene().getWindow());
          MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/mixkit-water-sci-fi-bleep-902.mp3", 0.7);
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/SamLocScene.fxml", "/com/example/demogamebai2/stylefile/SamLocGameStyle.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/SamLocScene.fxml", "/com/example/playcardsfx/stylefile/SamLocGameStyle.css");
     }
 
     public void homeButtonClick(MouseEvent event){
         SceneManager.getInstance().setPrimaryStage((Stage)homeButton.getScene().getWindow());
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/mixkit-water-sci-fi-bleep-902.mp3", 0.7);
         MediaManager.getInstance().playBackgroundMusic("/MusicSource/BackgroundMusic/retro-gaming-271301.mp3",0.5);
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/StartMenuScene.fxml", "/com/example/demogamebai2/stylefile/Style.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/StartMenuScene.fxml", "/com/example/playcardsfx/stylefile/Style.css");
     }
 }
 

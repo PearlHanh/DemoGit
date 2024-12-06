@@ -1,9 +1,9 @@
-package com.example.demogamebai2.controller.gameplaycontroller.bacay;
+package com.example.playcardsfx.controller.gameplaycontroller.bacay;
 
-import com.example.demogamebai2.utilities.MediaManager;
-import com.example.demogamebai2.model.Deck;
-import com.example.demogamebai2.model.Player;
-import com.example.demogamebai2.utilities.SceneManager;
+import com.example.playcardsfx.utilities.MediaManager;
+import com.example.playcardsfx.model.Deck;
+import com.example.playcardsfx.model.Player;
+import com.example.playcardsfx.utilities.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -103,14 +103,14 @@ public class BaCayController implements Initializable {
     @FXML
     public void reset(ActionEvent event) throws IOException {
         SceneManager.getInstance().setPrimaryStage((Stage)resetButton.getScene().getWindow());
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/BaCayScene.fxml", "/com/example/demogamebai2/stylefile/BaCayGameStyle.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/BaCayScene.fxml", "/com/example/playcardsfx/stylefile/BaCayGameStyle.css");
     }
 
     public  void homeButtonClicked(MouseEvent event){
         SceneManager.getInstance().setPrimaryStage((Stage)homeButton.getScene().getWindow());
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/mixkit-water-sci-fi-bleep-902.mp3", 0.7);
         MediaManager.getInstance().playBackgroundMusic("/MusicSource/BackgroundMusic/retro-gaming-271301.mp3",0.5);
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/StartMenuScene.fxml", "/com/example/demogamebai2/stylefile/Style.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/StartMenuScene.fxml", "/com/example/playcardsfx/stylefile/Style.css");
     }
     }
 

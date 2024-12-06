@@ -1,9 +1,9 @@
-package com.example.demogamebai2.controller.gameplaycontroller.samloc;
+package com.example.playcardsfx.controller.gameplaycontroller.samloc;
 
 
 
 
-import com.example.demogamebai2.model.Card;
+import com.example.playcardsfx.model.Card;
 
 import java.util.*;
 

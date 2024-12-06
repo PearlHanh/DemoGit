@@ -1,4 +1,4 @@
-package com.example.demogamebai2.utilities;
+package com.example.playcardsfx.utilities;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;

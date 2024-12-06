@@ -1,4 +1,4 @@
-package com.example.demogamebai2.model;
+package com.example.playcardsfx.model;
 
 public class Card{
     //Tạo thuộc tính điểm bài và chất bài

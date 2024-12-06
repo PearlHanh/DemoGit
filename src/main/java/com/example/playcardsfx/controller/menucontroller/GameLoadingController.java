@@ -1,6 +1,6 @@
-package com.example.demogamebai2.controller.menucontroller;
+package com.example.playcardsfx.controller.menucontroller;
 
-import com.example.demogamebai2.utilities.SceneManager;
+import com.example.playcardsfx.utilities.SceneManager;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -55,7 +55,7 @@ public class GameLoadingController implements Initializable {
                 timeline.setOnFinished(e -> {
                     // Chuyển cảnh sau khi timeline kết thúc
                     StartMenuController startMenuController = SceneManager.getInstance()
-                            .switchScene("/com/example/demogamebai2/fxmlfile/StartMenuScene.fxml", "/com/example/demogamebai2/stylefile/Style.css");
+                            .switchScene("/com/example/playcardsfx/fxmlfile/StartMenuScene.fxml", "/com/example/playcardsfx/stylefile/Style.css");
                 });
 
                 // Bắt đầu timeline

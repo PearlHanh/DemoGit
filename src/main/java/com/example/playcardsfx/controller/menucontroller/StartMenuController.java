@@ -1,7 +1,7 @@
-package com.example.demogamebai2.controller.menucontroller;
+package com.example.playcardsfx.controller.menucontroller;
 
-import com.example.demogamebai2.utilities.MediaManager;
-import com.example.demogamebai2.utilities.SceneManager;
+import com.example.playcardsfx.utilities.MediaManager;
+import com.example.playcardsfx.utilities.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,7 +16,7 @@ public class StartMenuController {
 
     public void gameSelect(ActionEvent event) throws IOException {
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/mouse-click-sound-233951.mp3", 1);
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/SelectGameSence.fxml", "/com/example/demogamebai2/stylefile/Style.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/SelectGameSence.fxml", "/com/example/playcardsfx/stylefile/Style.css");
 
     }
 }

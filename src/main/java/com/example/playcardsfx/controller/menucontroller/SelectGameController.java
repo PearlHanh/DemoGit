@@ -1,8 +1,8 @@
-package com.example.demogamebai2.controller.menucontroller;
+package com.example.playcardsfx.controller.menucontroller;
 
 
-import com.example.demogamebai2.utilities.MediaManager;
-import com.example.demogamebai2.utilities.SceneManager;
+import com.example.playcardsfx.utilities.MediaManager;
+import com.example.playcardsfx.utilities.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,7 +37,7 @@ public class SelectGameController implements Initializable {
     public void playBaCay(ActionEvent event) throws IOException {
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/mouse-click-sound-233951.mp3", 1);
         SceneManager.getInstance().setPrimaryStage((Stage)baCayButton.getScene().getWindow());
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/BaCayScene.fxml", "/com/example/demogamebai2/stylefile/BaCayGameStyle.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/BaCayScene.fxml", "/com/example/playcardsfx/stylefile/BaCayGameStyle.css");
     }
 
     /* Nhấn nút sâm lốc thì chạy game sâm lốc*/
@@ -45,7 +45,7 @@ public class SelectGameController implements Initializable {
     public void playSamloc(ActionEvent event) throws IOException {
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/mouse-click-sound-233951.mp3", 1);
         SceneManager.getInstance().setPrimaryStage((Stage)samLocButton.getScene().getWindow());
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/SamLocScene.fxml", "/com/example/demogamebai2/stylefile/SamLocGameStyle.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/SamLocScene.fxml", "/com/example/playcardsfx/stylefile/SamLocGameStyle.css");
 
     }
     /* Back về màn hình chính*/
@@ -53,7 +53,7 @@ public class SelectGameController implements Initializable {
     public void back(MouseEvent event)throws IOException{
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/mouse-click-sound-233951.mp3", 1);
         SceneManager.getInstance().setPrimaryStage((Stage)back.getScene().getWindow());
-        SceneManager.getInstance().switchScene("/com/example/demogamebai2/fxmlfile/StartMenuScene.fxml", "/com/example/demogamebai2/stylefile/Style.css");
+        SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/StartMenuScene.fxml", "/com/example/playcardsfx/stylefile/Style.css");
     }
 
 

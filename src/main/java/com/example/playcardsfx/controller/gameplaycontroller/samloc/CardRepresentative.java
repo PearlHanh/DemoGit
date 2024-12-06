@@ -1,4 +1,4 @@
-package com.example.demogamebai2.controller.gameplaycontroller.samloc;
+package com.example.playcardsfx.controller.gameplaycontroller.samloc;
 
 public class CardRepresentative {
     private int length; // Số lượng lá bài trong tổ hợp

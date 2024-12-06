@@ -1,4 +1,4 @@
-package com.example.demogamebai2.model;
+package com.example.playcardsfx.model;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,6 +1,6 @@
-package com.example.demogamebai2.controller.gameplaycontroller.bacay;
+package com.example.playcardsfx.controller.gameplaycontroller.bacay;
 
-import com.example.demogamebai2.model.Card;
+import com.example.playcardsfx.model.Card;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
-package com.example.demogamebai2.controller.menucontroller;
+package com.example.playcardsfx.controller.menucontroller;
 
-import com.example.demogamebai2.utilities.MediaManager;
-import com.example.demogamebai2.utilities.SceneManager;
+import com.example.playcardsfx.utilities.MediaManager;
+import com.example.playcardsfx.utilities.SceneManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
@@ -21,8 +21,8 @@ public class IntroGameController implements Initializable {
     public void evenClickedScene(MouseEvent event){
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/click-menu-app-147357.mp3", 1);
         SceneManager.getInstance().switchScene(
-                "/com/example/demogamebai2/fxmlfile/GameLoadingScene.fxml",
-                "/com/example/demogamebai2/stylefile/Style.css");
+                "/com/example/playcardsfx/fxmlfile/GameLoadingScene.fxml",
+                "/com/example/playcardsfx/stylefile/Style.css");
 
     }
 
