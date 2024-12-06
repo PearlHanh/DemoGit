@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demogamebai2.controller.menucontroller.SelectGameController">
+   <children>
+      <!-- Nền với hiệu ứng mờ -->
+      <ImageView fitHeight="614.0" fitWidth="1046.0" pickOnBounds="true" preserveRatio="false">
+         <image>
+            <Image url="@../../../../ImageSource/BackgroundImage/Background3.gif" />
+         </image>
+         <effect>
+            <BoxBlur />
+         </effect>
+      </ImageView>
+
+      <!-- AnchorPane chứa các nút -->
+      <AnchorPane prefHeight="562.0" prefWidth="912.0">
+         <children>
+            <Label fx:id="labelSelect" layoutX="361.0" layoutY="150.0" prefHeight="50.0" prefWidth="251.0" text="Chế độ chơi" />
+
+            <!-- Nút Ba Cây -->
+            <Button fx:id="baCayButton" layoutX="653.0" layoutY="410.0" mnemonicParsing="false" onAction="#playBaCay" text="Ba Cây" />
+
+            <!-- Nút Sâm Lốc -->
+            <Button fx:id="samLocButton" layoutX="197.0" layoutY="410.0" mnemonicParsing="false" onAction="#playSamloc" text="Sâm Lốc" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="623.0" layoutY="307.0" mouseTransparent="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/ImageDecorateImgae/com-webp-to-gif-converter-unscreen%20(1).gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="183.0" layoutY="307.0" mouseTransparent="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/ImageDecorateImgae/com-webp-to-gif-converter-unscreen.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="back" fitHeight="59.0" fitWidth="67.0" layoutX="27.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/GameSelectImage/img.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

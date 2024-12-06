@@ -1,0 +1,6 @@
+
+.label {
+    -fx-text-fill: #FF1493; /* Màu đỏ hồng (Deep Pink) */
+    -fx-font-weight: bold; /* Tô đậm phông chữ */
+    -fx-font-size: 16px; /* Kích thước phông chữ (tùy chỉnh theo nhu cầu) */
+}

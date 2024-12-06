@@ -1,0 +1,170 @@
+/*Nút bấm*/
+.button {
+    -fx-background-color: linear-gradient(to right, #FF5733, #FF8D1A, #FFD700); /* Dải chuyển màu từ đỏ, cam đến vàng */
+    -fx-text-fill: white; /* Màu chữ trắng */
+    -fx-font-size: 22px; /* Kích thước chữ lớn */
+    -fx-font-weight: bold; /* Chữ đậm */
+    -fx-border-radius: 30px; /* Bo góc tròn */
+    -fx-background-radius: 30px; /* Bo góc nền */
+    -fx-padding: 12px 24px; /* Khoảng cách giữa chữ và viền */
+    -fx-cursor: hand; /* Đổi con trỏ thành tay khi di chuột vào nút */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.8, 0, 3); /* Bóng đổ */
+    -fx-transition: all 0.3s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #FF512F, #F09819, #FF7E5F); /* Màu nền gradient khi hover (màu sáng hơn) */
+    -fx-text-fill: #FFD700; /* Màu chữ vàng khi hover */
+    -fx-scale-x: 1.1; /* Phóng to 10% khi hover */
+    -fx-scale-y: 1.1; /* Phóng to 10% khi hover */
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 15, 0.9, 0, 3); /* Bóng đổ sáng hơn khi hover */
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to right, #900C3F, #C70039, #FF5733); /* Nền gradient khi nhấn (đậm hơn) */
+    -fx-scale-x: 0.9; /* Thu nhỏ khi nhấn */
+    -fx-scale-y: 0.9; /* Thu nhỏ khi nhấn */
+
+}
+
+.button:disabled {
+    -fx-background-color: #C0C0C0; /* Nền xám khi vô hiệu hóa */
+    -fx-text-fill: #808080; /* Màu chữ xám */
+    -fx-cursor: not-allowed; /* Thay đổi con trỏ khi vô hiệu hóa */
+    -fx-effect: none; /* Tắt hiệu ứng */
+}
+
+
+/* Logo*/
+#labelSelect {
+
+    -fx-font-size: 35px;                         /* Kích thước chữ lớn */
+    -fx-text-fill: linear-gradient(to right, #FFFFFF, #00FFFF); /* Màu chữ trắng pha xanh lam nhạt */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.9), 10, 0.5, 3, 3); /* Hiệu ứng đổ bóng rõ nét */
+    -fx-padding: 20px;                         /* Khoảng cách bên trong */
+    -fx-border-color: linear-gradient(to right, #FFD700, #FFFF00); /* Viền gradient vàng sáng */
+    -fx-border-width: 4px;                     /* Độ dày viền */
+    -fx-border-radius: 20px;                   /* Bo góc viền mềm mại */
+    -fx-background-radius: 20px;               /* Bo góc nền tương tự */
+    -fx-background-color: rgba(255, 0, 0, 0.6); /* Nền đỏ mờ */
+    -fx-background-insets: 0, 1;               /* Tạo lớp nền nổi */
+    -fx-border-insets: 2;                      /* Tạo lớp viền nổi */
+    -fx-text-alignment: center;                /* Căn giữa văn bản */
+    -fx-cursor: hand;                          /* Thay đổi con trỏ chuột */
+    -fx-transition: all 0.3s ease-in-out;      /* Hiệu ứng chuyển động khi hover */
+    -fx-background-color: linear-gradient(to right, #FF4500, #DC143C); /* Nền gradient đỏ đậm khi hover */
+    -fx-border-color: linear-gradient(to right, #FFD700, #00FFFF);    /* Viền vàng sáng phối xanh lam nhạt */
+    -fx-text-fill: linear-gradient(to right, #FFFFFF, #FFFF00);       /* Màu chữ chuyển động khi hover */
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.8), 20, 0.5, 0, 0); /* Đổ bóng sáng hơn */
+
+}
+
+/*Thanh loading*/
+.progress-bar {
+    -fx-pref-height: 40px; /* Tăng chiều cao */
+    -fx-pref-width: 400px; /* Chiều rộng mặc định lớn hơn */
+    -fx-background-color: #e0e0e0; /* Màu nền */
+    -fx-background-radius: 20px; /* Bo góc mạnh */
+    -fx-padding: 4px; /* Khoảng cách giữa nền và thanh progress */
+    -fx-border-color: linear-gradient(to right, #ffffff, #cccccc); /* Viền gradient */
+    -fx-border-width: 3px; /* Độ dày viền */
+    -fx-border-radius: 20px; /* Bo góc viền */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.5, 0, 3); /* Đổ bóng bên ngoài */
+}
+
+.progress-bar .track {
+    -fx-background-color: transparent; /* Ẩn track */
+}
+
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(
+        to right,
+        #f12711,
+        #f5af19,
+        #12c2e9,
+        #c471ed,
+        #f64f59
+    ); /* Gradient nhiều màu sắc */
+    -fx-background-radius: 18px; /* Bo góc thanh progress */
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0.6, 0, 2); /* Bóng trong 3D */
+    -fx-opacity: 0.95; /* Làm màu sắc rõ hơn */
+    -fx-animation: glow 2.5s infinite; /* Hiệu ứng nhấp nháy */
+}
+
+/* Animation gradient di chuyển và phát sáng */
+@keyframes glow {
+    0% {
+        -fx-background-color: linear-gradient(to right, #f12711, #f5af19, #12c2e9, #c471ed, #f64f59);
+    }
+    50% {
+        -fx-background-color: linear-gradient(to right, #f64f59, #c471ed, #12c2e9, #f5af19, #f12711);
+    }
+    100% {
+        -fx-background-color: linear-gradient(to right, #f12711,
+}
+}
+
+
+
+#imageView {
+    /* Đổ bóng với bán kính lớn hơn và thêm độ mờ */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 20, 0.7, 8, 8),
+                innershadow(gaussian, rgba(255, 223, 0, 0.5), 10, 0.5, 0, 0);
+
+    /* Viền gradient vàng óng ánh */
+    -fx-border-color: linear-gradient(to right, gold, orange);
+    -fx-border-width: 5;
+    -fx-border-radius: 15;
+
+    /* Góc bo tròn cho hình ảnh */
+    -fx-background-radius: 15;
+
+    /* Ánh sáng phát sáng */
+
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 30, 0.9, 10, 10),
+                    glow(0.9);
+        -fx-border-color: linear-gradient(to right, orange, gold);
+        -fx-cursor: hand; /* Biểu tượng trỏ chuột khi di chuột vào */
+}
+
+#back{
+       -fx-background-color: transparent; /* Không có nền */
+          -fx-padding: 10px; /* Khoảng cách giữa hình ảnh và các cạnh */
+          -fx-cursor: hand; /* Thay đổi con trỏ chuột khi hover */
+          -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0, 0, 8); /* Bóng nhẹ */
+          -fx-transition: all 0.3s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+          -fx-border-radius: 15px; /* Bo góc của ảnh */
+          -fx-background-radius: 15px; /* Bo góc nền */
+ }
+
+      /* Hiệu ứng khi hover (di chuột vào) */
+#back:hover{
+      -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0, 0, 12); /* Bóng đậm hơn khi hover */
+          -fx-scale-x: 1.1; /* Phóng to hình ảnh theo trục X */
+          -fx-scale-y: 1.1; /* Phóng to hình ảnh theo trục Y */
+          -fx-background-color: rgba(255, 255, 255, 0.2); /* Nền mờ khi hover */
+          -fx-border-color: #00bfff; /* Đổi màu đường viền */
+          -fx-border-width: 3px; /* Độ rộng đường viền */
+}
+
+      /* Hiệu ứng khi nhấn */
+#back:pressed {
+
+          -fx-scale-x: 0.95; /* Thu nhỏ hình ảnh khi nhấn */
+          -fx-scale-y: 0.95; /* Thu nhỏ hình ảnh khi nhấn */
+          -fx-background-color: rgba(0, 191, 255, 0.3); /* Nền đậm khi nhấn */
+          -fx-border-color: #00bfff; /* Đường viền đậm khi nhấn */
+          -fx-border-width: 3px; /* Đường viền khi nhấn */
+}
+
+
+
+
+
+
+
+
+
+
+
+

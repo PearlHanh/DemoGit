@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#evenClickedScene" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demogamebai2.controller.menucontroller.IntroGameController">
+   <children>
+      <ImageView fitHeight="1011.0" fitWidth="1014.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../ImageSource/IntroGameImage/unnamed.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="logoTeam" fitHeight="239.0" fitWidth="451.0" layoutX="303.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/IntroGameImage/image_2024-12-06_234652135_preview_rev_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="65.0" layoutX="458.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/IntroGameImage/Icon_Emoji_Paimon%2027s_Paintings_01_Lumine_1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="92.0" layoutY="479.0" text="Lê Duy" />
+            <Label layoutX="92.0" layoutY="400.0" text="Duy" />
+            <Label layoutX="92.0" layoutY="560.0" text="Minh Dức" />
+            <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="458.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/IntroGameImage/Icon_Emoji_Paimon%2027s_Paintings_01_Paimon_6.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="544.0" layoutY="392.0" text="Hoàng Anh (trưởng nhóm)" />
+            <Label layoutX="544.0" layoutY="471.0" text="Nguyễn Khôi" />
+            <Label layoutX="544.0" layoutY="560.0" text="An" />
+            <ImageView fitHeight="79.0" fitWidth="65.0" layoutX="1.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/IntroGameImage/Icon_Emoji_Paimon%2027s_Paintings_02_Qiqi_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="58.0" fitWidth="65.0" layoutX="5.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/IntroGameImage/Icon_Emoji_Paimon%2027s_Paintings_04_Tartaglia_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="4.0" layoutY="539.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/IntroGameImage/Icon_Emoji_Paimon%2027s_Paintings_14_Kamisato_Ayaka_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="75.0" fitWidth="65.0" layoutX="458.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../ImageSource/IntroGameImage/Icon_Emoji_Paimon%2027s_Paintings_15_Xiao_1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="383.0" layoutY="72.0" text="&lt;Nhấn bất kì đâu để tiếp tục &gt;" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

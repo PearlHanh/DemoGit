@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="demoGameBai2">
+    <output-path>$PROJECT_DIR$/out/artifacts/demoGameBai2</output-path>
+    <root id="root">
+      <element id="archive" name="demoGameBai2.jar">
+        <element id="module-output" name="PlayCardsFX" />
+      </element>
+    </root>
+  </artifact>
+</component>
