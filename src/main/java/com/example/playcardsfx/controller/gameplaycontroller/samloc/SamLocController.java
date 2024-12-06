@@ -77,7 +77,7 @@ public class SamLocController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         MediaManager.getInstance().playBackgroundMusic("/MusicSource/BackgroundMusic/puzzle-game-bright-casual-video-game-music-249202.mp3",0.05);
-        centerHand.setStyle("-fx-background-color: #8B0000;");
+
         //Khoi tao
         // tro choi moi
         Deck deck2 = new Deck();

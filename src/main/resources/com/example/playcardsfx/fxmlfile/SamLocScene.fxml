@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="609.0" fitWidth="1079.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../ImageSource/BackgroundImage/dglksej-3ed5f398-b5c8-4d98-b908-43438b2964f2.gif" />
+            <Image url="@../../../../ImageSource/BackgroundImage/BackGround7.gif" />
          </image>
          <effect>
             <BoxBlur />
