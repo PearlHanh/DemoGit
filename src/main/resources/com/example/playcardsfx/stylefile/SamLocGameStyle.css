@@ -40,5 +40,13 @@
      -fx-scale-y: 1.1;  /* Phóng to khi hover */
 
  }
+#turn1 {
+    -fx-border-color: #000000;  /* Màu viền */
+    -fx-border-width: 5px;      /* Độ dày viền */
+    -fx-border-radius: 15px;    /* Bo góc */
+    -fx-padding: 10px;          /* Khoảng cách giữa viền và hình ảnh */
+    -fx-background-color: transparent;  /* Đảm bảo nền trong suốt để thấy viền */
+}
+
 
 

@@ -9,14 +9,12 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -42,7 +40,6 @@ public class SamLocController implements Initializable {
     private ImageView homeButton;
     @FXML
     private AnchorPane parent;
-
     //Luu day bai muon danh
     private ArrayList<Card> handOfPlayer1;
     private ArrayList<Card> handOfPlayer2;
@@ -69,7 +66,7 @@ public class SamLocController implements Initializable {
     private int length1, length2, number1, number2, type1, type2;
     private int c1, c2;
     private CardRepresentative checkHand;
-    private HBox hBox;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -82,9 +79,7 @@ public class SamLocController implements Initializable {
         count = 0;
         c1 = 10;
         c2 = 10;
-        hBox = new HBox(10);
-        hBox.setAlignment(Pos.CENTER);
-        centerHand.setAlignment(Pos.CENTER);
+
         player1 = new Player("Player1");
         player2 = new Player("Player2");
         currentHand = new CardRepresentative(0, 0, 0);
@@ -181,14 +176,10 @@ public class SamLocController implements Initializable {
             if (checkHand != null){
                 currentHand = checkHand;
                 m = idx1.size();
-                hBox.getChildren().clear();
-                centerHand.setGraphic(null);
                 for (int i = 0; i < m; i++) {
-                    hBox.getChildren().add(handsOfPlayer1.get(idx1.get(0)));
                     parent.getChildren().remove(handsOfPlayer1.get(idx1.get(0)));
                     idx1.remove(0);
                 }
-                centerHand.setGraphic(hBox);
                 m = handOfPlayer1.size();
                 for(int i = 0; i < m; i++){
                     handOfPlayer1.remove(0);
@@ -202,16 +193,12 @@ public class SamLocController implements Initializable {
             if(check.getType() ==4){
                 currentHand = check;
                 m = idx1.size();
-                hBox.getChildren().clear();
-                centerHand.setGraphic(null);
                 for (int i = 0; i < m; i++) {
-                    hBox.getChildren().add(handsOfPlayer1.get(idx1.get(0)));
                     parent.getChildren().remove(handsOfPlayer1.get(idx1.get(0)));
                     handOfPlayer1.remove(idx1.get(0));
                     idx1.remove(0);
                     count = 1;
                 }
-                centerHand.setGraphic(hBox);
                 m = handOfPlayer1.size();
                 for(int i = 0; i < m; i++){
                     handOfPlayer1.remove(0);
@@ -225,12 +212,6 @@ public class SamLocController implements Initializable {
             number1 = turn.generateRepresentative(handOfPlayer1).getNumber();
             type1 = turn.generateRepresentative(handOfPlayer1).getLength();
             if (currentHand.getLength() == length1 && currentHand.getNumber() < number1 && currentHand.getType() == type1) {
-                hBox.getChildren().clear();
-                centerHand.setGraphic(null);
-                for(int i = 0; i < m; i++) {
-                    hBox.getChildren().add(handsOfPlayer1.get(idx1.get(i)));
-                }
-                centerHand.setGraphic(hBox);
                 currentHand = turn.generateRepresentative(handOfPlayer1);
                 removeHand(handsOfPlayer1, handOfPlayer1, idx1);
                 m = handOfPlayer1.size();
@@ -255,15 +236,11 @@ public class SamLocController implements Initializable {
             if (check != null) {
                 currentHand = turn.generateRepresentative(handOfPlayer2);
                 m = idx2.size();
-                hBox.getChildren().clear();
-                centerHand.setGraphic(null);
                 for (int i = 0; i < m; i++) {
-                    hBox.getChildren().add(handsOfPlayer2.get(idx2.get(0)));
                     parent.getChildren().remove(handsOfPlayer2.get(idx2.get(0)));
                     idx2.remove(0);
                     count = 0;
                 }
-                centerHand.setGraphic(hBox);
                 m = handOfPlayer2.size();
                 for(int i = 0; i < m; i++){
                     handOfPlayer2.remove(0);
@@ -278,12 +255,6 @@ public class SamLocController implements Initializable {
             type2 = turn.generateRepresentative(handOfPlayer2).getType();
 
             if (currentHand.getLength() == length2 && currentHand.getNumber() < number2 && currentHand.getType() == type2) {
-                hBox.getChildren().clear();
-                centerHand.setGraphic(null);
-                for (int i = 0; i < m; i++) {
-                    hBox.getChildren().add(handsOfPlayer2.get(idx2.get(i)));
-                }
-                centerHand.setGraphic(hBox);
                 currentHand = turn.generateRepresentative(handOfPlayer2);
                 removeHand(handsOfPlayer2, handOfPlayer2, idx2);
                 c2 -= length2;
@@ -298,16 +269,12 @@ public class SamLocController implements Initializable {
             if(check.getType() ==4){
                 currentHand = check;
                 m = idx2.size();
-                hBox.getChildren().clear();
-                centerHand.setGraphic(null);
                 for (int i = 0; i < m; i++) {
-                    hBox.getChildren().add(handsOfPlayer2.get(idx2.get(0)));
                     parent.getChildren().remove(handsOfPlayer2.get(idx2.get(0)));
                     handOfPlayer2.remove(idx2.get(0));
                     idx2.remove(0);
                     count = 1;
                 }
-                centerHand.setGraphic(hBox);
                 m = handOfPlayer2.size();
                 for(int i = 0; i < m; i++){
                     handOfPlayer2.remove(0);
@@ -329,10 +296,8 @@ public class SamLocController implements Initializable {
         // Người chơi 1 bỏ lượt, chuyển sang người chơi 2
         count = 1; // Chuyển lượt
         currentHand = new CardRepresentative(0, 0, 0); // Đặt lại kiểu bài
-        hBox.getChildren().clear();
-        centerHand.setGraphic(null);
         // Đặt lại trạng thái bài đã chọn
-        resetSelectedCards(handsOfPlayer1, idx1, handOfPlayer1);
+        resetSelectedCards(handsOfPlayer1, idx1);
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/select-sound-121244.mp3", 0.7);
     }
 
@@ -340,18 +305,16 @@ public class SamLocController implements Initializable {
         // Người chơi 2 bỏ lượt, chuyển sang người chơi 1
         count = 0; // Chuyển lượt
         currentHand = new CardRepresentative(0, 0, 0); // Đặt lại kiểu bài
-        hBox.getChildren().clear();
-        centerHand.setGraphic(null);
 
         // Đặt lại trạng thái bài đã chọn
-        resetSelectedCards(handsOfPlayer2, idx2, handOfPlayer2);
+        resetSelectedCards(handsOfPlayer2, idx2);
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/select-sound-121244.mp3", 0.7);
     }
 
 
 
     // Đặt lại trạng thái bài đã chọn
-    private void resetSelectedCards(ArrayList<ImageView> handsOfPlayer, ArrayList<Integer> idx, ArrayList<Card> handOfPlayer) {
+    private void resetSelectedCards(ArrayList<ImageView> handsOfPlayer, ArrayList<Integer> idx) {
         // Đặt lại các quân bài đã được nhấc lên
         for (int i : idx) {
             ImageView card = handsOfPlayer.get(i);
@@ -360,13 +323,6 @@ public class SamLocController implements Initializable {
             transition.play();
             cardStates.put(card, false); // Cập nhật trạng thái
         }
-        while(idx.size() > 0){
-            idx.remove(0);
-        }
-        while(handOfPlayer.size() > 0){
-            handOfPlayer.remove(0);
-        }
-
         idx.clear(); // Xóa danh sách các quân bài đã chọn
     }
 
