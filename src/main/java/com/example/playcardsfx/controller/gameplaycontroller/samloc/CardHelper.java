@@ -15,7 +15,7 @@ class CardHelper {
 
     // Tạo đại diện từ danh sách các lá bài
     public CardRepresentative generateRepresentative(List<Card> cards) {
-        if (cards == null || cards.isEmpty()) return null;
+        if (cards == null || cards.isEmpty()) return new CardRepresentative(-1, -1 , -1);
 
         // Sắp xếp bài theo số
         // Lấy danh sách số bài
@@ -72,18 +72,18 @@ class CardHelper {
             // Trường hợp dây (đại diện là số lớn nhất trong dãy)
             return new CardRepresentative(count1, Collections.max(numbers), 5);
         } else {
-            return null; // Không hợp lệ
+            return new CardRepresentative(-1, -1, -1); // Không hợp lệ
         }
     }
 
     // Kiểm tra xem một bộ có phải là tam (3 lá giống nhau) hay không
     private static boolean isTriple(List<Integer> numbers) {
-        return numbers.stream().distinct().count() == 1 && numbers.size() == 3;
+        return (numbers.stream().distinct().count() == 1 && numbers.size() == 3);
     }
 
     // Kiểm tra xem một bộ có phải là tứ (4 lá giống nhau) hay không
     private static boolean isQuad(List<Integer> numbers) {
-        return numbers.stream().distinct().count() == 1 && numbers.size() == 4;
+        return (numbers.stream().distinct().count() == 1 && numbers.size() == 4);
     }
 
     // Kiểm tra xem danh sách số có phải là dây hợp lệ không

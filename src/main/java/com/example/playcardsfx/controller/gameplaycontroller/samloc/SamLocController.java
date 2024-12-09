@@ -60,7 +60,7 @@ public class SamLocController implements Initializable {
     private CardRepresentative check;
 
     //Lop dai dien cac la bai
-    private CardHelper turn;
+    private CardHelper turn, turnTest;
     //Kieu bai cua mot tap hop bai hien tai
     private CardRepresentative currentHand;
     private int count;
@@ -68,8 +68,9 @@ public class SamLocController implements Initializable {
     private int m;
     private int length1, length2, number1, number2, type1, type2;
     private int c1, c2;
-    private CardRepresentative checkHand;
+    private CardRepresentative checkHand, test;
     private HBox hBox;
+    private Map<ImageView, Boolean> cardStates;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -100,6 +101,8 @@ public class SamLocController implements Initializable {
         idx1 = new ArrayList<>();
         idx2 = new ArrayList<>();
 
+
+        test = new CardRepresentative(0, 0, 0);
         // Tao mang cac imageView de them anh
         handsOfPlayer1 = new ArrayList<>();
         Collections.addAll(handsOfPlayer1, hand11, hand12, hand13, hand14, hand15, hand16, hand17, hand18, hand19, hand110);
@@ -112,11 +115,11 @@ public class SamLocController implements Initializable {
         }
         handOfPlayer1 = new ArrayList<>();
         handOfPlayer2 = new ArrayList<>();
-
+        cardStates = new HashMap<>();
+        turnTest = new CardHelper();
     }
 
     // Thêm thao tác nhô lên hạ xuống của bài
-    private Map<ImageView, Boolean> cardStates = new HashMap<>();
 
     //Event click chuot vao la bai
     public void onCardClicked(MouseEvent mouseEvent) {
@@ -145,6 +148,7 @@ public class SamLocController implements Initializable {
                     cardStates.put(clicked, false); // Cập nhật trạng thái
 
                 }
+                test = turnTest.generateRepresentative(handOfPlayer1);
                 transition.play(); // Chạy hiệu ứng
             } else {
                 k = handsOfPlayer2.indexOf(clicked);
@@ -156,6 +160,8 @@ public class SamLocController implements Initializable {
                     transition2.setToY(-20); // Di chuyển len tren
                     handOfPlayer2.add(player2.getCardOfPlayer(k));
                     idx2.add(k);
+                    test = turnTest.generateRepresentative(handOfPlayer2);
+                    System.out.println(test.getLength() + " " + test.getNumber() + " " + test.getType());
                     cardStates.put(clicked, true); // Cập nhật trạng thái
 
                 } else {
@@ -190,15 +196,13 @@ public class SamLocController implements Initializable {
                 }
                 centerHand.setGraphic(hBox);
                 m = handOfPlayer1.size();
-                for(int i = 0; i < m; i++){
-                    handOfPlayer1.remove(0);
-                }   
+                handOfPlayer1.clear();
                 count = 1;
                 c1 -= m;
             }
         }
         else if(currentHand.getLength() == 1 && currentHand.getNumber() == 15 && currentHand.getType() == 1){
-            check = turn.generateRepresentative(handOfPlayer1);
+            check = turnTest.generateRepresentative(handOfPlayer1);
             if(check.getType() ==4){
                 currentHand = check;
                 m = idx1.size();
@@ -213,17 +217,17 @@ public class SamLocController implements Initializable {
                 }
                 centerHand.setGraphic(hBox);
                 m = handOfPlayer1.size();
-                for(int i = 0; i < m; i++){
-                    handOfPlayer1.remove(0);
-                }
+                handOfPlayer1.clear();
                 c1 -= m;
             }
         }
 
         else if (count == 0) {
-            length1 = turn.generateRepresentative(handOfPlayer1).getLength();
-            number1 = turn.generateRepresentative(handOfPlayer1).getNumber();
-            type1 = turn.generateRepresentative(handOfPlayer1).getLength();
+            length1 = turnTest.generateRepresentative(handOfPlayer1).getLength();
+            number1 = turnTest.generateRepresentative(handOfPlayer1).getNumber();
+            type1 = currentHand.getType();
+            System.out.println(currentHand.getLength() + " " + currentHand.getNumber() + " " + currentHand.getType());
+            System.out.println(length1 + " " + number1 + " " + type1);
             if (currentHand.getLength() == length1 && currentHand.getNumber() < number1 && currentHand.getType() == type1) {
                 hBox.getChildren().clear();
                 centerHand.setGraphic(null);
@@ -231,12 +235,10 @@ public class SamLocController implements Initializable {
                     hBox.getChildren().add(handsOfPlayer1.get(idx1.get(i)));
                 }
                 centerHand.setGraphic(hBox);
-                currentHand = turn.generateRepresentative(handOfPlayer1);
+                currentHand = turnTest.generateRepresentative(handOfPlayer1);
                 removeHand(handsOfPlayer1, handOfPlayer1, idx1);
                 m = handOfPlayer1.size();
-                for(int i = 0;i < m; i++) {
-                    handOfPlayer1.remove(0);
-                }
+                handOfPlayer1.clear();
                 c1 -= length1;
                 count = 1;
             }
@@ -251,7 +253,7 @@ public class SamLocController implements Initializable {
     public void danhBai2(ActionEvent actionEvent) {
         turn = new CardHelper();
         if (currentHand.getLength() == 0 && currentHand.getNumber() == 0 && currentHand.getType() == 0 &&  count == 1) {
-            check = turn.generateRepresentative(handOfPlayer2);
+            check = turnTest.generateRepresentative(handOfPlayer2);
             if (check != null) {
                 currentHand = turn.generateRepresentative(handOfPlayer2);
                 m = idx2.size();
@@ -266,17 +268,20 @@ public class SamLocController implements Initializable {
                 centerHand.setGraphic(hBox);
                 m = handOfPlayer2.size();
                 for(int i = 0; i < m; i++){
-                    handOfPlayer2.remove(0);
+                    System.out.print(handOfPlayer2.get(i).getCardIndex() + " ");
+                    System.out.println();
                 }
+                handOfPlayer2.clear();
 
                 c2 -= m;
             }
         }
         else if (count == 1) {
-            length2 = turn.generateRepresentative(handOfPlayer2).getLength();
-            number2 = turn.generateRepresentative(handOfPlayer2).getNumber();
-            type2 = turn.generateRepresentative(handOfPlayer2).getType();
-
+            length2 = turnTest.generateRepresentative(handOfPlayer2).getLength();
+            number2 = turnTest.generateRepresentative(handOfPlayer2).getNumber();
+            type2 = turnTest.generateRepresentative(handOfPlayer2).getType();
+            System.out.println(currentHand.getLength() + " "  + currentHand.getNumber() + " " + currentHand.getType());
+            System.out.println(length2 + " " + number2 + " " + type2);
             if (currentHand.getLength() == length2 && currentHand.getNumber() < number2 && currentHand.getType() == type2) {
                 hBox.getChildren().clear();
                 centerHand.setGraphic(null);
@@ -284,17 +289,19 @@ public class SamLocController implements Initializable {
                     hBox.getChildren().add(handsOfPlayer2.get(idx2.get(i)));
                 }
                 centerHand.setGraphic(hBox);
-                currentHand = turn.generateRepresentative(handOfPlayer2);
+                currentHand = turnTest.generateRepresentative(handOfPlayer2);
                 removeHand(handsOfPlayer2, handOfPlayer2, idx2);
                 c2 -= length2;
                 for(int i = 0; i <handOfPlayer2.size(); i++){
-                    handOfPlayer2.remove(0);
+                    System.out.print(handOfPlayer2.get(i).getCardIndex() + " ");
+                    System.out.println();
                 }
+                handOfPlayer2.clear();
                 count = 0;
             }
         }
         else if(currentHand.getLength() == 1 && currentHand.getNumber() == 15 && currentHand.getType() == 1){
-            check = turn.generateRepresentative(handOfPlayer2);
+            check = turnTest.generateRepresentative(handOfPlayer2);
             if(check.getType() ==4){
                 currentHand = check;
                 m = idx2.size();
@@ -310,6 +317,8 @@ public class SamLocController implements Initializable {
                 centerHand.setGraphic(hBox);
                 m = handOfPlayer2.size();
                 for(int i = 0; i < m; i++){
+                    System.out.print(handOfPlayer2.get(0).getCardIndex() + " ");
+                    System.out.println();
                     handOfPlayer2.remove(0);
                 }
                 c2 -= m;
@@ -326,62 +335,62 @@ public class SamLocController implements Initializable {
 
 
     public void boBai1(ActionEvent event) {
-        // Người chơi 1 bỏ lượt, chuyển sang người chơi 2
-        count = 1; // Chuyển lượt
+        // Người chơi 1 bỏ lượt, chuyển sang người chơi 2// Chuyển lượt
         currentHand = new CardRepresentative(0, 0, 0); // Đặt lại kiểu bài
         hBox.getChildren().clear();
         centerHand.setGraphic(null);
+        handOfPlayer1.clear();
+        idx1.clear();
         // Đặt lại trạng thái bài đã chọn
-        resetSelectedCards(handsOfPlayer1, idx1, handOfPlayer1);
+        //resetSelectedCards(handsOfPlayer1, idx1, handOfPlayer1);
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/select-sound-121244.mp3", 0.7);
+        count = 1;
     }
 
     public void boBai2(ActionEvent event) {
         // Người chơi 2 bỏ lượt, chuyển sang người chơi 1
-        count = 0; // Chuyển lượt
+        // Chuyển lượt
         currentHand = new CardRepresentative(0, 0, 0); // Đặt lại kiểu bài
         hBox.getChildren().clear();
         centerHand.setGraphic(null);
-
+        handOfPlayer2.clear();
+        idx2.clear();
         // Đặt lại trạng thái bài đã chọn
-        resetSelectedCards(handsOfPlayer2, idx2, handOfPlayer2);
+        //resetSelectedCards(handsOfPlayer2, idx2, handOfPlayer2);
         MediaManager.getInstance().playClickSound("/MusicSource/EffectMusic/select-sound-121244.mp3", 0.7);
+        count = 0;
     }
 
 
 
     // Đặt lại trạng thái bài đã chọn
-    private void resetSelectedCards(ArrayList<ImageView> handsOfPlayer, ArrayList<Integer> idx, ArrayList<Card> handOfPlayer) {
+    /*private void resetSelectedCards(ArrayList<ImageView> handsOfPlayer, ArrayList<Integer> idx, ArrayList<Card> handOfPlayer) {
         // Đặt lại các quân bài đã được nhấc lên
-        for (int i : idx) {
-            ImageView card = handsOfPlayer.get(i);
-            TranslateTransition transition = new TranslateTransition(Duration.millis(50), card);
-            transition.setToY(0); // Đưa bài về vị trí ban đầu
-            transition.play();
-            cardStates.put(card, false); // Cập nhật trạng thái
-        }
-        while(idx.size() > 0){
-            idx.remove(0);
-        }
-        while(handOfPlayer.size() > 0){
-            handOfPlayer.remove(0);
+        if (!idx.isEmpty()) {
+            for (int i : idx) {
+                ImageView card = handsOfPlayer.get(i);
+                TranslateTransition transition = new TranslateTransition(Duration.millis(50), card);
+                transition.setToY(0); // Đưa bài về vị trí ban đầu
+                transition.play();
+                cardStates.put(card, false); // Cập nhật trạng thái
+            }
+            handOfPlayer.clear();
+            idx.clear();
         }
 
-        idx.clear(); // Xóa danh sách các quân bài đã chọn
+
     }
+
+     */
 
     public void removeHand(ArrayList<ImageView> handsOfPlayer, ArrayList<Card> handOfPlayer, ArrayList<Integer> idx){
         int m = idx.size();
         for (int i = 0; i < m; i++) {
-            if(m == 0){
-                break;
-            }
-            else {
                 parent.getChildren().remove(handsOfPlayer.get(idx.get(0)));
-                handOfPlayer.remove(idx.get(0));
-                idx.remove(0);
-            }
+                handsOfPlayer.remove(idx.get(i));
         }
+        handOfPlayer.clear();
+        idx.clear();
 
     }
 
@@ -398,6 +407,8 @@ public class SamLocController implements Initializable {
         SceneManager.getInstance().switchScene("/com/example/playcardsfx/fxmlfile/StartMenuScene.fxml", "/com/example/playcardsfx/stylefile/Style.css");
     }
 }
+
+
 
 
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.playcardsfx.controller.gameplaycontroller.samloc.SamLocBotController">
+   <children>
+      <ImageView fx:id="hand11" fitHeight="120.0" fitWidth="90.0" layoutX="5.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand12" fitHeight="120.0" fitWidth="90.0" layoutX="105.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand13" fitHeight="120.0" fitWidth="90.0" layoutX="205.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand14" fitHeight="120.0" fitWidth="90.0" layoutX="305.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand15" fitHeight="120.0" fitWidth="90.0" layoutX="405.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand16" fitHeight="120.0" fitWidth="90.0" layoutX="505.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand17" fitHeight="120.0" fitWidth="90.0" layoutX="605.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand18" fitHeight="120.0" fitWidth="90.0" layoutX="705.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand19" fitHeight="120.0" fitWidth="90.0" layoutX="805.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand110" fitHeight="120.0" fitWidth="90.0" layoutX="905.0" layoutY="450.0" onMouseClicked="#onCardClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand21" fitHeight="120.0" fitWidth="90.0" layoutX="5.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand22" fitHeight="120.0" fitWidth="90.0" layoutX="105.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand23" fitHeight="120.0" fitWidth="90.0" layoutX="205.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand24" fitHeight="120.0" fitWidth="90.0" layoutX="305.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand25" fitHeight="120.0" fitWidth="90.0" layoutX="405.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand26" fitHeight="120.0" fitWidth="90.0" layoutX="505.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand27" fitHeight="120.0" fitWidth="90.0" layoutX="605.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand28" fitHeight="120.0" fitWidth="90.0" layoutX="705.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand29" fitHeight="120.0" fitWidth="90.0" layoutX="805.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="hand210" fitHeight="120.0" fitWidth="90.0" layoutX="905.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="banhBaiButton" layoutX="720.0" layoutY="380.0" mnemonicParsing="false" onAction="#danhBai" text="Đánh bài" />
+      <Button fx:id="boBaiButton" layoutX="850.0" layoutY="380.0" mnemonicParsing="false" onAction="#boBai" text="Bỏ bài" />
+      <Label fx:id="centerHand" layoutY="257.0" prefHeight="100.0" prefWidth="1000.0" />
+   </children>
+</AnchorPane>
